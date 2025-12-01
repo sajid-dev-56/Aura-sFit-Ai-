@@ -1,0 +1,7 @@
+{
+  "name": "Aura'sFit AI",
+  "description": "Premium AI-powered personal fashion stylist and color analysis tool.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

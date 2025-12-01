@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aura'sFit AI - Personal Stylist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              champagne: {
+                50: '#FDFBF7',
+                100: '#F9F5EC',
+                200: '#F1E8D5',
+                300: '#E6D6B3',
+                400: '#DBC392',
+                500: '#CBAF73', // Main Gold
+                600: '#A68B56',
+                700: '#826B42',
+                800: '#635136',
+                900: '#483C2A',
+              },
+              stone: {
+                850: '#23211e',
+                950: '#0c0a09',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s ease-out',
+              'slide-up': 'slideUp 0.8s ease-out',
+              'float': 'float 6s ease-in-out infinite',
+              'scan': 'scan 4s linear infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              scan: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(200%)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #FDFBF7;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #1c1917;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #DBC392;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #CBAF73;
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .dark .glass-card {
+        background: rgba(28, 25, 23, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-champagne-50 text-stone-800 dark:bg-stone-950 dark:text-champagne-100 antialiased selection:bg-champagne-200 dark:selection:bg-stone-800 transition-colors duration-300">
+    <div id="root"></div>
+  </body>
+</html>
